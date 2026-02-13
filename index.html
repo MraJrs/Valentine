@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Valentine ❤️</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    
+    <style>
+        body {
+            background-color: #ffe5ec;
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+
+        /* Background Animasi Hati */
+        #heartContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .main-container {
+            position: relative;
+            z-index: 10;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+        .card-valentine {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            border: none;
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(255, 75, 110, 0.2);
+            overflow: hidden;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .nav-pills .nav-link {
+            color: #ff4d6d;
+            border-radius: 20px;
+            margin: 0 5px;
+            font-weight: 600;
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: #ff4d6d;
+        }
+
+        h1 {
+            font-family: 'Pacifico', cursive;
+            color: #ff4d6d;
+        }
+
+        /* Foto Kenangan Styles */
+        .photo-frame {
+            border: 8px solid white;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transform: rotate(-2deg);
+            transition: 0.3s;
+            max-width: 100%;
+            border-radius: 5px;
+        }
+
+        .photo-frame:hover {
+            transform: rotate(0deg) scale(1.05);
+        }
+
+        .btn-love {
+            background-color: #ff4d6d;
+            color: white;
+            border-radius: 30px;
+            padding: 12px 30px;
+            border: none;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-love:hover {
+            background-color: #c9184a;
+            transform: scale(1.05);
+            color: white;
+        }
+
+        .tab-content {
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+<audio autoplay>
+    <source src="tes.mp3" type="audio/mp3">
+</audio>
+
+<div id="heartContainer"></div>
+
+<div class="container main-container">
+    <div class="card-valentine animate__animated animate__fadeInDown">
+        
+        <ul class="nav nav-pills justify-content-center mt-4" id="pills-tab" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button">❤️ Depan</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-message-tab" data-bs-toggle="pill" data-bs-target="#pills-message" type="button">💌 Pesan</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link" id="pills-gallery-tab" data-bs-toggle="pill" data-bs-target="#pills-gallery" type="button">📸 Kenangan</button>
+            </li>
+        </ul>
+
+        <div class="tab-content text-center" id="pills-tabContent">
+            
+            <div class="tab-pane fade show active" id="pills-home" role="tabpanel">
+                <div class="py-5">
+                    <img src="https://cdn-icons-png.flaticon.com/512/833/833472.png" width="100" class="mb-4 animate__animated animate__pulse animate__infinite">
+                    <h1>Hai, Fahira Aisyarah!</h1>
+                    <p class="text-muted mt-3">Ada sesuatu yang spesial buat kamu hari ini...</p>
+                    <button class="btn btn-love mt-3" onclick="triggerTab('pills-message-tab')">Buka Suratnya</button>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="pills-message" role="tabpanel">
+                <div class="py-4 px-3">
+                    <h2 class="mb-4">Selamat hari Valentine</h2>
+                    <p class="lead" style="line-height: 1.8;">
+                        "Happy Valentine day Iraa, terima kasih untuk selama ini, aku mau bilang, semangat untuk hari-harinya, semoga sukses dunia dan akhiraat"
+                    </p>
+                    <p class="fw-bold" style="color: #ff4d6d;">- I Love You More Than Words Can Say -</p>
+                    <button class="btn btn-love mt-3" onclick="triggerTab('pills-gallery-tab')">Lihat Foto Kita</button>
+                </div>
+            </div>
+
+            <div class="tab-pane fade" id="pills-gallery" role="tabpanel">
+                <h2 class="mb-4">Momen Berharga</h2>
+                <div class="row g-3">
+                    <div class="col-6">
+                        <img src="ira1.jpeg" class="photo-frame img-fluid" alt="Kenangan 1">
+                    </div>
+                    <div class="col-6">
+                        <img src="Ira.jpeg" class="photo-frame img-fluid"  alt="Kenangan 2">
+                    </div>
+                    <div class="col-12 mt-4 text-muted small">
+                        <i>"Setiap foto punya cerita, dan setiap cerita selalu ada kamu."</i>
+                    </div>
+                </div>
+                <button class="btn btn-outline-danger btn-sm mt-5" onclick="triggerTab('pills-home-tab')">Kembali ke Awal</button>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Fungsi pindah tab manual lewat tombol
+    function triggerTab(tabId) {
+        var someTabTriggerEl = document.querySelector('#' + tabId);
+        var tab = new bootstrap.Tab(someTabTriggerEl);
+        tab.show();
+    }
+
+    // Animasi Hati Jatuh yang lebih smooth
+    function createHeart() {
+        const heart = document.createElement('div');
+        const colors = ['#ff4d6d', '#ff758f', '#ff8fa3', '#ffb3c1'];
+        
+        heart.innerHTML = '❤️';
+        heart.style.position = 'fixed';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.top = '-20px';
+        heart.style.fontSize = Math.random() * 15 + 10 + 'px';
+        heart.style.color = colors[Math.floor(Math.random() * colors.length)];
+        heart.style.opacity = Math.random() * 0.8 + 0.2;
+        heart.style.zIndex = '0';
+        heart.style.transition = 'transform 4s linear, opacity 4s';
+        
+        document.getElementById('heartContainer').appendChild(heart);
+
+        setTimeout(() => {
+            heart.style.transform = `translateY(110vh) rotate(${Math.random() * 720}deg)`;
+            heart.style.opacity = '0';
+        }, 100);
+
+        setTimeout(() => {
+            heart.remove();
+        }, 4100);
+    }
+
+    setInterval(createHeart, 300);
+</script>
+
+</body>
+</html>
